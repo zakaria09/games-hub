@@ -3,35 +3,24 @@ import { Games } from '@/types/games.type';
 import React from 'react';
 import Image from 'next/image'
 import { Rating } from 'react-simple-star-rating';
+import { Card } from './card';
 
-export const GamesList = (data: { games: Games }) => {
+export const GamesList = (data: Games ) => {
 
     return (
         <div className='grid lg:grid-cols-2 gap-6'>
-            {
-                data.games.results.map(game => 
-                    <div 
-                        key={game.id} 
-                        className="card w-96 shadow-xl">
-                        <figure><Image 
-                            src={game.background_image}
-                            alt="Shoes"
-                            width={800}
-                            height={500}
-                            style={{objectFit: "cover", height: "15em"}}
-                        /></figure>
-                        <div className="card-body">
-                            <h2 className="card-title">{game.name}</h2>
-                            <Rating
-                                readonly
-                                initialValue={Math.round(game.rating * 100) / 100}
-                                allowFraction
-                                SVGstyle={ { 'display':'inline' } }
-                            />
-                        </div>
-                    </div>
-                )
-            }
+        {
+            data.results.map(game => 
+                <Card key={game.id} data={game}>
+                    <Rating
+                        readonly
+                        initialValue={Math.round(game.rating * 100) / 100}
+                        allowFraction
+                        SVGstyle={ { 'display':'inline' } }
+                    />
+                </Card>
+            )
+        }
         </div>
     );
 }

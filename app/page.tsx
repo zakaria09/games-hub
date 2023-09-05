@@ -13,7 +13,7 @@ export default async function Home() {
     <main className="grid-area">
       <div className='main-content'>
         <Suspense fallback={<Loading />}>
-          <GamesList games={games} />
+          <GamesList {...games} />
         </Suspense>
       </div>
     </main>

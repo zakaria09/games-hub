@@ -1,4 +1,6 @@
-export interface GameDevelopers {
+import { Widgets } from './widgets.type';
+
+export interface GameDevelopers extends Widgets {
   count: number;
   next: string;
   previous?: any;

@@ -1,3 +1,4 @@
+import { GameDevs } from '@/components/game-devs';
 import { GamesList } from '@/components/games';
 import { Navbar } from '@/components/navbar';
 import { GameDevelopers } from '@/types/developers.type';
@@ -12,6 +13,7 @@ export default async function Home() {
   return (
     <main>
         <h1>Game Developers</h1>
+        <GameDevs developers={gameDevelopers} />
     </main>
   )
 }

@@ -1,3 +1,4 @@
+import { Widgets } from './widgets.type';
 
 export interface Games {
   count: number;
