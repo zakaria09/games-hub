@@ -1,6 +1,7 @@
 import { GameDevs } from '@/components/game-devs';
 import { GamesList } from '@/components/games';
 import { Navbar } from '@/components/navbar';
+import { Pagination } from '@/components/pagination';
 import { GameDevelopers } from '@/types/developers.type';
 import { Games } from '@/types/games.type';
 import Image from 'next/image'
@@ -14,6 +15,7 @@ export default async function Home() {
     <main>
         <h1>Game Developers</h1>
         <GameDevs developers={gameDevelopers} />
+        <Pagination />
     </main>
   )
 }
