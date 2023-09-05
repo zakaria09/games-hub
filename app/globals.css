@@ -27,8 +27,11 @@
 } */
 
 .grid-area {
-  grid-template-areas: "main sidebar";
+  grid-template-areas:
+    "nav nav"
+    "main sidebar";
   display: grid;
+  grid-gap: 1em;
   grid-template-columns: 3fr 1fr;
 }
 
@@ -39,4 +42,9 @@
 .sidebar {
   grid-area: sidebar;
   background-color: orange;
+}
+
+.nav {
+  grid-area: nav;
+  background-color: red;
 }

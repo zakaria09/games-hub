@@ -7,7 +7,7 @@ import { Rating } from 'react-simple-star-rating';
 export const GamesList = (data: { games: Games }) => {
 
     return (
-        <div className='grid grid-cols-2 gap-6'>
+        <div className='grid lg:grid-cols-2 gap-6'>
             {
                 data.games.results.map(game => 
                     <div 
@@ -18,7 +18,7 @@ export const GamesList = (data: { games: Games }) => {
                             alt="Shoes"
                             width={800}
                             height={500}
-                            style={{objectFit: "cover", height: "15em", width: "100%"}}
+                            style={{objectFit: "cover", height: "15em"}}
                         /></figure>
                         <div className="card-body">
                             <h2 className="card-title">{game.name}</h2>
