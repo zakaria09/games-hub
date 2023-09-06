@@ -1,4 +1,3 @@
-'use server';
 import { GamesList } from '@/components/games';
 import { Navbar } from '@/components/navbar';
 import { Games } from '@/types/games.type';

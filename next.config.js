@@ -21,9 +21,7 @@ const nextConfig = {
         pathname: '/media/**/**',
       },
     ],
-  },
-  experimental: {
-    serverActions: true,
+    domains: ['source.unsplash.com'],
   },
 };
 
