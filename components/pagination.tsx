@@ -1,28 +1,26 @@
 'use client';
-import React, { useState } from 'react';
+import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
+import React from 'react';
 
-export const Pagination = ({}) => {
-  const [page, setPage] = useState<number>(1);
+export const Pagination = () => {
+  const searchParams = useSearchParams();
 
-  const nextPage = () => {
-    setPage((prev) => prev + 1);
-  };
-
-  const prevPage = () => {
-    if (page <= 1) return;
-    setPage((prev) => prev - 1);
-  };
+  const page = searchParams.get('page');
 
   return (
     <div className='flex content-center my-4 p-4 justify-center'>
       <div className='join'>
-        <button className='join-item btn' onClick={prevPage}>
+        <Link
+          className='join-item btn'
+          href={`?page=${Number(page) < 0 ? Number(page) - 1 : 1}`}
+        >
           «
-        </button>
+        </Link>
         <button className='join-item px-4'>Page {page}</button>
-        <button className='join-item btn' onClick={nextPage}>
+        <Link className='join-item btn' href={`?page=${Number(page) + 1}`}>
           »
-        </button>
+        </Link>
       </div>
     </div>
   );
