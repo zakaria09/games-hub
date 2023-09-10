@@ -17,8 +17,6 @@ export const Card = ({
       <figure>
         <Image
           src={image}
-          placeholder='blur'
-          blurDataURL='https://bit.ly/placeholder-image'
           alt='Shoes'
           width={800}
           height={500}

@@ -1,12 +1,12 @@
 'use client';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
+import {useSearchParams} from 'next/navigation';
 import React from 'react';
 
 export const Pagination = () => {
   const searchParams = useSearchParams();
 
-  const page = searchParams.get('page');
+  const page = searchParams.get('page') ?? 1;
 
   return (
     <div className='flex content-center my-4 p-4 justify-center'>
